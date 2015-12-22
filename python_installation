@@ -6,6 +6,8 @@ sudo pip3 install -U pip
 
 or via apt-get e.g.
 sudo install python3-matplotlib
+sudo apt-get install python3 python3-tk idle python-pmw python3-imaging
+
 
 
 update all pip packages
