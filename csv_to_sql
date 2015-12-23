@@ -26,5 +26,9 @@ head -1000 data.csv | csvsql --no-constraints -i postgresql --table data
 3. load the data
 csvsql --db postgresql://NAME:PASSWORD@ADDRESS/data --no-create --db-schema lendingclub --table data --insert out.csv
 
+via postgres COPY
+remove all quotes:
+cat  data.csv | csvformat -D "," > bla.csv
+COPY data FROM 'bla.csv' WITH CSV DELIMITER ',' NULL '' HEADER;
 
 
