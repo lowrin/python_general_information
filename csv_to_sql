@@ -1,0 +1,26 @@
+how to push a csv file into a sql database without much effort.
+
+tools:
+postgresql server
+https://github.com/onyxfish/csvkit
+
+if you have a xls(x) file convert it into csv 
+tool: in2csv
+
+examine the csv file with
+csvlook data.csv | head
+csvcut -n data.csv
+csvstat data.csv
+csvlook data.csv | head -1000 | csvstat
+
+
+push the csv file into the sql database (http://csvkit.readthedocs.org/en/0.9.1/scripts/csvsql.html)
+
+for small files use sqlite
+csvsql --db sqlite:///db1.db --insert data.csv
+
+for bigger files use postgresql
+1. create the sql create statement for the table on basis of the first 1000 rows
+head -1000 data.csv | csvsql --no-constraints -i postgresql --table data
+2. run the sql statement in the postgres management tool
+3. load the data
