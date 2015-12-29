@@ -1,0 +1,15 @@
+built in: 
+- http://www.postgresql.org/docs/8.2/static/view-pg-stats.html
+
+ANALYZE data;
+
+select * from pg_stats where tablename = 'data';
+
+
+
+
+
+other solutions:
+- http://madlib.net/
+- pandas?
+- ?
