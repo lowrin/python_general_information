@@ -1,0 +1,21 @@
+import pandas as pd
+from sqlalchemy import create_engine
+
+engine = create_engine('postgresql://postgres:PASSWORD@localhost:5432/data')
+
+a = pd.read_sql_query('select * from data', con=engine)
+
+
+#print(a.describe())
+#print(a)
+print(a.info())
+
+
+
+
+# same from csv
+b = pd.read_csv('loan.csv', low_memory=False)
+
+print(b.describe())
+print(b.info())
+#print(b)
