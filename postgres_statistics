@@ -2,9 +2,18 @@ built in:
 - http://www.postgresql.org/docs/8.2/static/view-pg-stats.html
 
 ANALYZE data;
-
 select * from pg_stats where tablename = 'data';
 
+
+
+
+
+
+Transformation:
+UPDATE data SET term = split_part(trim(term),' ',1);
+ALTER TABLE data
+    ALTER COLUMN term TYPE integer
+    USING term::integer
 
 
 
