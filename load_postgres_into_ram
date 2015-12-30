@@ -1,0 +1,11 @@
+postgres 9.4+
+http://www.postgresql.org/docs/current/interactive/pgprewarm.html
+CREATE EXTENSION pg_prewarm;
+SELECT pg_prewarm('my_tbl');
+
+
+
+before:
+SELECT * FROM <table>
+SELECT <primary key fields> FROM <table> ORDER BY <primary key fields>
+SELECT <indexed fields> FROM <table> ORDER BY <indexed fields>
