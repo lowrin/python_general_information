@@ -13,6 +13,11 @@ csvcut -n data.csv
 csvstat data.csv
 csvlook data.csv | head -1000 | csvstat
 
+remove the last 4 lines from the file
+head -n -1 foo.txt > temp.txt
+
+replace all empty values ("") with blank
+sed -i 's/""//g' data.csv
 
 push the csv file into the sql database (http://csvkit.readthedocs.org/en/0.9.1/scripts/csvsql.html)
 
@@ -29,6 +34,6 @@ csvsql --db postgresql://NAME:PASSWORD@ADDRESS/data --no-create --db-schema lend
 via postgres COPY
 remove all quotes:
 cat  data.csv | csvformat -D "," > bla.csv
-COPY data FROM 'bla.csv' WITH CSV DELIMITER ',' NULL '' HEADER;
+COPY data FROM 'bla.csv' WITH CSV HEADER DELIMITER ',' NULL '' ;
 
 
