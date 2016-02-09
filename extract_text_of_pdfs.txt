@@ -1,9 +1,0 @@
-
-install the command line tool:
-sudo apt-get install poppler-utils 
-
-run the tool:
-$ pdftotext file.pdf
-
-then import the raw text files with python
-
