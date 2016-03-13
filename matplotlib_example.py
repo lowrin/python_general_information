@@ -2,6 +2,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 import matplotlib.pyplot as plt
 import matplotlib
+# good is fivethirtyeight, ggplot 
 matplotlib.style.use('seaborn-whitegrid')
 
 
@@ -17,3 +18,6 @@ plt.ylabel('y label')
 plt.title("Simple Plot")
 
 plt.show()
+
+
+fun: plt.xkcd()
