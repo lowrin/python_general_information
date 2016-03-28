@@ -7,7 +7,8 @@ The -L 2000:personal-server.com:25 is in the form of -L local-port:host:remote-p
 Finally the -N instructs OpenSSH to not execute a command on the remote system.
 
 example:
-ssh -L 9000:localhost:3306 jonas@192.168.0.176 -N
+- for tunneling the remote mysql server to the local port 9000
+ssh -L 9000:localhost:3306 jonas@192.168.0.176 -nNT &
 
 
 
