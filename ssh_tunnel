@@ -1,6 +1,16 @@
 ssh -f user@personal-server.com -L 2000:personal-server.com:25 -N
 
+
 The -f tells ssh to go into the background just before it executes the command. 
 This is followed by the username and server you are logging into. 
 The -L 2000:personal-server.com:25 is in the form of -L local-port:host:remote-port. 
 Finally the -N instructs OpenSSH to not execute a command on the remote system.
+
+example:
+ssh -L 9000:localhost:3306 jonas@192.168.0.176 -N
+
+
+
+
+You might have noticed that every time we create a tunnel you also SSH into the server and get a shell. This isn’t usually necessary, as you’re just trying to create a tunnel. To avoid this we can run SSH with the -nNT flags, such as the following, which will cause SSH to not allocate a tty and only do the port forwarding.
+
