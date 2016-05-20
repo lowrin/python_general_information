@@ -10,7 +10,9 @@ pd.DataFrame(np.nan, index=[], columns=[])
 # fill data in
 
 # set cell, no matter if the row or column exists, it will be created
-df.set_value(column,row,value)
+df.set_value(row,"column",value)
+# to add as last row
+df.set_value(df.size,"column",value)
 
 
 
