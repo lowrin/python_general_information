@@ -12,7 +12,7 @@ pd.DataFrame(np.nan, index=[], columns=[])
 # set cell, no matter if the row or column exists, it will be created
 df.set_value(row,"column",value)
 # to add as last row
-df.set_value(df.size,"column",value)
+df.set_value(len(df.index),"column",value)
 
 
 
