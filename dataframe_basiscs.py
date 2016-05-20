@@ -12,8 +12,7 @@ pd.DataFrame(np.nan, index=[], columns=[])
 # set cell, no matter if the row or column exists, it will be created
 df.set_value(row,"column",value)
 # to add as last row
-df.set_value(len(df.index),"column",value)
-
+df.loc[len(df)]=['8/19/2014','Jun','Fly','98765'] 
 
 
 # iteration
